@@ -24,7 +24,7 @@ class Game:
                     winners.append(player)
                     break
                 
-        if (len(winners) == 1): print(str(winners[0]) + " wins the game with " + format_points(winner.score) + "!")
+        if (len(winners) == 1): print(str(winners[0]) + " wins the game with " + format_points(winners[0].score) + "!")
         else:
             print("Tied winners!")
             to_print = ""
