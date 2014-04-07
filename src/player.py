@@ -13,13 +13,12 @@ class Player:
         
         #Reveals a given letter of a word or checks for win if a word was typed
         if (len(guess) == 1):
-            word.reveal(guess)
+            if (not word.reveal(guess)):
+                self.game.guesses -= 1
             if (word.is_fully_revealed()):
                 self.win()
         elif (word.word == guess):
             self.win()
-            
-        self.game.guesses -= 1
         
     def win(self):
         print(str(self) + " has guessed the word, +1 point!")

@@ -5,4 +5,4 @@ def get_choice(choices):
         return choice
     
 def format_points(points):
-    return points + " point" + ("s" if points > 1 else "")
+    return str(points) + " point" + ("s" if points > 1 else "")

@@ -2,6 +2,8 @@ from player import Player
 from util import get_choice, format_points
 from word import Word
 
+MAX_GUESSES = 9
+
 class Game:
     def __init__(self):
         self.players = []
@@ -58,7 +60,8 @@ class Game:
         while (True):
             print(str(self.current_leader) + ", pick a word!")
             self.current_word = Word(input())
-            self.guesses = len(self.current_word.word) #Give the players an amount of guesses equal to the word length
+            print("\n"*20)
+            self.guesses = MAX_GUESSES #Give the players an amount of guesses equal to the word length
             while (True):
                 #Loop through players which are non-leaders
                 for player in [player for player in self.players if player != self.current_leader]:
