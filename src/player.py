@@ -13,6 +13,7 @@ class Player:
         
         #Reveals a given letter of a word or checks for win if a word was typed
         if (len(guess) == 1):
+            #Reveal returns true if the guess revealed any letters
             if (not word.reveal(guess)):
                 self.game.guesses -= 1
             if (word.is_fully_revealed()):

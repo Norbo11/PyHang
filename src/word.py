@@ -6,7 +6,7 @@ class Word:
     #Reveals a letter by adding it to the revealed list
     def reveal(self, letter):
         self.revealed.append(letter)
-        return letter in self.word
+        return letter in self.word #Return true/false based on whether any letter was revealed
         
     #Returns a string representing the word according to the revealed letters
     def get_word_string(self):

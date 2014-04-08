@@ -34,8 +34,8 @@ class Game:
         print("Thanks for playing PyHang by Norbo11!")
             
     def shift_leader(self):
+        #Assigns the first player to be the leader if the new index exceeds the allowable range, otherwise it just assings the a player with the new index
         new_index = self.players.index(self.current_leader) + 1
-        #Assings the first player to be the leader if the new index exceeds the allowable range, otherwise it just assings the a player with the new index
         self.current_leader = self.players[0] if new_index > len(self.players) - 1 else self.players[new_index]
     
     def clear_vars(self):
@@ -60,8 +60,9 @@ class Game:
         while (True):
             print(str(self.current_leader) + ", pick a word!")
             self.current_word = Word(input())
+            self.guesses = MAX_GUESSES
             print("\n"*20)
-            self.guesses = MAX_GUESSES #Give the players an amount of guesses equal to the word length
+            
             while (True):
                 #Loop through players which are non-leaders
                 for player in [player for player in self.players if player != self.current_leader]:
@@ -76,7 +77,7 @@ class Game:
                         break
                 else:
                     continue; #Executed if the loop finished without breaking
-                break #This never gets called until the above "conitnue" isn't called (which happens when break is called within the inner loop)
+                break #This never gets called until the above "continue" isn't called (which happens when break is called within the inner loop)
             
             print("Keep playing? y/n")
             
